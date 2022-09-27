@@ -1,0 +1,1048 @@
+# Menu item in the DrawerList list.
+#:import utils kivy.utils
+<Contentd>
+    orientation: "vertical"
+    BoxLayout:
+        orientation: "horizontal"
+
+<sDrawer>:
+
+    orientation: "horizontal"
+    padding: "10dp"
+
+
+
+
+
+
+<ContentNavigationDrawer>:
+    orientation: "vertical"
+    padding: "8dp"
+    spacing: "8dp"
+
+    AnchorLayout:
+        anchor_x: "left"
+        size_hint_y: None
+        height: avatar.height
+
+        Image:
+            id: avatar
+            size_hint: None, None
+            size: "56dp", "56dp"
+            source: "/PicnicGo_версия 1.3/Иконки/главный.jpg"
+        MDNavigationDrawerHeader:
+            title: "Header title"
+            title_color: "#4a4939"
+            text: "Header text"
+
+
+
+    ScrollView:
+
+        DrawerList:
+            id: md_list
+            OneLineAvatarListItem:
+                on_release: app.on_fg()
+                text: "О нас"
+                IconLeftWidget:
+                    icon: "information"
+            OneLineAvatarListItem:
+                on_release: app.show_date_picker()
+                text: "Календарь"
+                IconLeftWidget:
+                    icon: "calendar"
+            OneLineAvatarListItem:
+                on_release: app.show_ate_picker()
+                text: "Выход"
+                IconLeftWidget:
+                    icon: "exit-to-app"
+
+
+Screen:
+    screen_manager: screen_manager
+    nav_drawer: nav_drawer
+
+    MDNavigationLayout:
+
+        ScreenManager:
+            id: screen_manager
+            MDScreen:
+                screen_manager: screen_manager
+                nav_drawer: nav_drawer
+
+                MDBottomNavigation:
+                    panel_color: 1, 1, 1, 0
+
+
+                    MDBottomNavigationItem:
+                        name: 'screen 1'
+                        text: 'Калькулятор'
+                        icon: 'calculator-variant'
+
+                        BoxLayout:
+                            orientation: 'vertical'
+
+                            BoxLayout:
+                                orientation: "vertical"
+                                TextInput:
+                                    id:calc_input
+                                    text: "0"
+                                    halign: "left"
+                                    size_hint: 1 , 0.2
+                                GridLayout:
+                                    spacing: 3
+                                    padding: 3
+                                    size_hint: 1 , 0.6
+                                    cols:4
+                                    MDRaisedButton:
+                                        text: "AC"
+                                        size_hint: 0.20 , 0.55
+                                        theme_text_color: "Custom"
+                                        text_color: 1, 1, 1, 1
+                                        md_bg_color: 0.6, 0.6, 0.6, 1
+                                        on_press: app.clear()
+                                    MDRaisedButton:
+                                        id: clear
+                                        text: "<--"
+                                        size_hint: 0.20 , 0.55
+                                        on_press: app.remove()
+
+
+                                        theme_text_color: "Custom"
+                                        text_color: 1, 1, 1, 1
+                                        md_bg_color: 0.6, 0.6, 0.6, 1
+                                    MDRaisedButton:
+                                        text: "/"
+                                        size_hint: 0.20 , 0.55
+
+                                        theme_text_color: "Custom"
+                                        text_color: 1, 1, 1, 1
+                                        md_bg_color: 0.6, 0.6, 0.6, 1
+                                        on_press: app.divide()
+                                    MDRaisedButton:
+                                        text: "x"
+                                        size_hint: 0.20 , 0.55
+
+                                        theme_text_color: "Custom"
+                                        text_color: 1, 1, 1, 1
+                                        md_bg_color: 0.6, 0.6, 0.6, 1
+                                        on_press: app.multiply()
+                                    MDRaisedButton:
+                                        text: "7"
+                                        size_hint: 0.20 , 0.55
+                                        theme_text_color: "Custom"
+                                        text_color: 0.01, 0.01, 0.01, 1
+                                        md_bg_color: 0.85, 0.85, 0.85, 1
+                                        on_press: app.button_press(7)
+                                    MDRaisedButton:
+                                        text: "8"
+                                        size_hint: 0.20 , 0.55
+
+                                        theme_text_color: "Custom"
+                                        text_color: 0.01, 0.01, 0.01, 1
+                                        md_bg_color: 0.85, 0.85, 0.85, 1
+                                        on_press: app.button_press(8)
+                                    MDRaisedButton:
+                                        text: "9"
+                                        size_hint: 0.20 , 0.55
+
+                                        theme_text_color: "Custom"
+                                        text_color: 0.01, 0.01, 0.01, 1
+                                        md_bg_color: 0.85, 0.85, 0.85, 1
+                                        on_press: app.button_press(9)
+                                    MDRaisedButton:
+                                        text: "-"
+                                        size_hint: 0.20 , 0.55
+
+                                        theme_text_color: "Custom"
+                                        text_color: 1, 1, 1, 1
+                                        md_bg_color: 0.6, 0.6, 0.6, 1
+                                        on_press: app.subtract()
+
+                                    MDRaisedButton:
+                                        text: "4"
+                                        size_hint: 0.20 , 0.55
+                                        theme_text_color: "Custom"
+                                        text_color: 0.01, 0.01, 0.01, 1
+                                        md_bg_color: 0.85, 0.85, 0.85, 1
+                                        on_press: app.button_press(4)
+                                    MDRaisedButton:
+                                        text: "5"
+                                        size_hint: 0.20 , 0.55
+
+                                        theme_text_color: "Custom"
+                                        text_color: 0.01, 0.01, 0.01, 1
+                                        md_bg_color: 0.85, 0.85, 0.85, 1
+                                        on_press: app.button_press(5)
+                                    MDRaisedButton:
+                                        text: "6"
+                                        size_hint: 0.20 , 0.55
+
+                                        theme_text_color: "Custom"
+                                        text_color: 0.01, 0.01, 0.01, 1
+                                        md_bg_color: 0.85, 0.85, 0.85, 1
+                                        on_press: app.button_press(6)
+                                    MDRaisedButton:
+                                        text: "+"
+                                        size_hint: 0.20 , 0.55
+
+                                        theme_text_color: "Custom"
+                                        text_color: 1, 1, 1, 1
+                                        md_bg_color: 0.6, 0.6, 0.6, 1
+                                        on_press: app.add()
+
+                                    MDRaisedButton:
+                                        text: "1"
+                                        size_hint: 0.20 , 0.55
+
+                                        theme_text_color: "Custom"
+                                        text_color: 0.01, 0.01, 0.01, 1
+                                        md_bg_color: 0.85, 0.85, 0.85, 1
+                                        on_press: app.button_press(1)
+                                    MDRaisedButton:
+                                        text: "2"
+                                        size_hint: 0.20 , 0.55
+
+                                        theme_text_color: "Custom"
+                                        text_color: 0.01, 0.01, 0.01, 1
+                                        md_bg_color: 0.85, 0.85, 0.85, 1
+                                        on_press: app.button_press(2)
+                                    MDRaisedButton:
+                                        text: "3"
+                                        size_hint: 0.20 , 0.55
+
+                                        theme_text_color: "Custom"
+                                        text_color: 0.01, 0.01, 0.01, 1
+                                        md_bg_color: 0.85, 0.85, 0.85, 1
+                                        on_press: app.button_press(3)
+                                    MDRaisedButton:
+                                        id: inp0
+                                        halign: "right"
+                                        text: "0"
+                                        size_hint: 0.20 , 0.55
+
+                                        theme_text_color: "Custom"
+                                        text_color: 1, 1, 1, 1
+                                        md_bg_color: 0.6, 0.6, 0.6, 1
+                                        on_press: app.button_press(0)
+                                BoxLayout
+                                    size_hint: 1 , 0.2
+
+                                    orientation: "horizontal"
+                                    MDRaisedButton:
+
+                                        text: "="
+                                        size_hint: 1 , 1
+
+                                        theme_text_color: "Custom"
+                                        text_color: 1, 1, 1, 1
+                                        md_bg_color: 0.6, 0.6, 0.6, 1
+                                        on_press: app.equals()
+
+                    MDBottomNavigationItem:
+                        name: 'screen 2'
+                        text: 'Главная'
+                        icon: 'home'
+
+
+
+
+                        BoxLayout:
+                            orientation: 'vertical'
+
+                            MDTopAppBar:
+                                title: "Picnic"
+                                elevation: 10
+                                left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+                                md_bg_color: 0, 0, 0, 1
+
+
+                            BoxLayout:
+                                orientation: "vertical"
+                                spacing: "10dp"
+                                padding: 0, "10dp", "10dp", "10dp"
+                                ScrollView:
+                                    scroll_timeout : 100
+                                    MDList:
+                                        id: md_list
+                                        padding: 0
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            padding: "10dp"
+                                            FitImage:
+                                                source: "/PicnicGo_версия 1.3/Иконки/денги.png"
+                                                size_hint: 0.25, .85
+                                            MDTextField:
+                                                id: bud
+                                                hint_text: "Какой бюджет?"
+                                                mode: "fill"
+                                                fill_color_normal: 0, 0, 0, 1
+
+
+
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            padding: "10dp"
+                                            MDTextField:
+                                                id: coli
+                                                hint_text: "Сколько людей?"
+                                                mode: "fill"
+
+
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            padding: "10dp"
+                                            MDTextField:
+                                                hint_text: "Вы вегетарианец?"
+                                                mode: "fill"
+                                                md_bg_color: 0, 0, 0, 1
+                                                max_text_length: 1
+                                            MDRaisedButton:
+                                                id: vega
+                                                size_hint: .35, .70
+                                                text: "Выбрать"
+                                                theme_text_color: "Custom"
+                                                text_color: 0, 0, 0, 1
+                                                md_bg_color: 0.85, 0.85, 0.85, 1
+                                                on_release: app.show_alert_dialog()
+
+
+
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            padding: "10dp"
+                                            FitImage:
+                                                source: "/PicnicGo_версия 1.3/Иконки/восход.jpg"
+                                                size_hint: 0.25, .85
+                                            MDTextField:
+                                                id: ftt
+                                                hint_text: "На сколька дней?"
+                                                mode: "fill"
+                                                md_bg_color: 0, 0, 0, 1
+                                                max_text_length:
+
+
+
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            padding: "10dp"
+                                            MDTextField:
+                                                hint_text: "Куда поедите?"
+                                                mode: "fill"
+                                                max_text_length: 1
+                                            MDRaisedButton:
+                                                id: i
+                                                size_hint: .35, .70
+                                                text: "Выбрать"
+                                                theme_text_color: "Custom"
+                                                text_color: 0, 0, 0, 1
+                                                md_bg_color: 0.85, 0.85, 0.85, 1
+                                                on_release: app.show_aler_dialog()
+
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            padding: "10dp"
+                                            MDTextField:
+                                                hint_text: "В какой сезон?"
+                                                mode: "fill"
+                                                max_text_length: 1
+                                            MDRaisedButton:
+                                                id: u
+                                                size_hint: .35, .70
+                                                text: "Выбрать"
+                                                theme_text_color: "Custom"
+                                                text_color: 0, 0, 0, 1
+                                                md_bg_color: 0.85, 0.85, 0.85, 1
+                                                on_release: app.show_alerr_dialog()
+                                        BoxLayout:
+                                            orientation: "vertical"
+                                            padding: "10dp"
+                                            MDRaisedButton:
+                                                text: "Вести"
+                                                theme_text_color: "Custom"
+                                                text_color: 0, 0, 0, 1
+                                                md_bg_color: 0.85, 0.85, 0.85, 1
+
+                                                on_release: app.vivod()
+                                                size_hint: 1, .50
+
+
+                    MDBottomNavigationItem:
+                        name: 'screen 3'
+                        text: 'Продукты'
+                        source: "/PicniGo_1.4/Иконки/45200.png"
+
+                        MDLabel
+
+#Screen:
+#    screen_manager: screen_manager
+#    nav_drawer: nav_drawer
+#
+#    MDNavigationLayout:
+#
+#        ScreenManager:
+#            id: screen_manager
+#
+#            MDScreen:
+#                name: "scr 1"
+#
+#                BoxLayout:
+#                    orientation: 'vertical'
+#
+#                    MDTopAppBar:
+#                        title: "Picnic"
+#                        elevation: 10
+#                        left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+#                        right_action_items: [["calculator", lambda x: app.calc()]]
+#                        md_bg_color: 0, 0, 0, 1
+#
+#                    MDTabs:
+#                        id: tabs
+#                        background_color: 0.1, 0.1, 0.1, 1
+#                        Tab:
+#                            title: "Дом"
+#                            name: "Дом"
+#                            icon: "home"
+#                            BoxLayout:
+#                                orientation: "vertical"
+#                                spacing: "10dp"
+#                                padding: 0, "10dp", "10dp", "10dp"
+#                                ScrollView:
+#                                    scroll_timeout : 100
+#                                    MDList:
+#                                        id: md_list
+#                                        padding: 0
+#                                        BoxLayout:
+#                                            orientation: "horizontal"
+#                                            padding: "10dp"
+#                                            FitImage:
+#                                                source: "/PicnicGo_версия 1.3/Иконки/денги.png"
+#                                                size_hint: 0.25, .85
+#                                            MDTextField:
+#                                                id: bud
+#                                                hint_text: "Какой бюджет?"
+#                                                mode: "fill"
+#                                                fill_color_normal: 0, 0, 0, 1
+#
+#
+#
+#                                        BoxLayout:
+#                                            orientation: "horizontal"
+#                                            padding: "10dp"
+#                                            MDTextField:
+#                                                id: coli
+#                                                hint_text: "Сколько людей?"
+#                                                mode: "fill"
+#
+#
+#                                        BoxLayout:
+#                                            orientation: "horizontal"
+#                                            padding: "10dp"
+#                                            MDTextField:
+#                                                hint_text: "Вы вегетарианец?"
+#                                                mode: "fill"
+#                                                md_bg_color: 0, 0, 0, 1
+#                                                max_text_length: 1
+#                                            MDRaisedButton:
+#                                                id: vega
+#                                                size_hint: .35, .70
+#                                                text: "Выбрать"
+#                                                theme_text_color: "Custom"
+#                                                text_color: 0, 0, 0, 1
+#                                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                                on_release: app.show_alert_dialog()
+#
+#
+#
+#                                        BoxLayout:
+#                                            orientation: "horizontal"
+#                                            padding: "10dp"
+#                                            FitImage:
+#                                                source: "/PicnicGo_версия 1.3/Иконки/восход.jpg"
+#                                                size_hint: 0.25, .85
+#                                            MDTextField:
+#                                                id: ftt
+#                                                hint_text: "На сколька дней?"
+#                                                mode: "fill"
+#                                                md_bg_color: 0, 0, 0, 1
+#                                                max_text_length:
+#
+#
+#
+#                                        BoxLayout:
+#                                            orientation: "horizontal"
+#                                            padding: "10dp"
+#                                            MDTextField:
+#                                                hint_text: "Куда поедите?"
+#                                                mode: "fill"
+#                                                max_text_length: 1
+#                                            MDRaisedButton:
+#                                                id: i
+#                                                size_hint: .35, .70
+#                                                text: "Выбрать"
+#                                                theme_text_color: "Custom"
+#                                                text_color: 0, 0, 0, 1
+#                                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                                on_release: app.show_aler_dialog()
+#
+#                                        BoxLayout:
+#                                            orientation: "horizontal"
+#                                            padding: "10dp"
+#                                            MDTextField:
+#                                                hint_text: "В какой сезон?"
+#                                                mode: "fill"
+#                                                max_text_length: 1
+#                                            MDRaisedButton:
+#                                                id: u
+#                                                size_hint: .35, .70
+#                                                text: "Выбрать"
+#                                                theme_text_color: "Custom"
+#                                                text_color: 0, 0, 0, 1
+#                                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                                on_release: app.show_alerr_dialog()
+#                                        BoxLayout:
+#                                            orientation: "vertical"
+#                                            padding: "10dp"
+#                                            MDRaisedButton:
+#                                                text: "Вести"
+#                                                theme_text_color: "Custom"
+#                                                text_color: 0, 0, 0, 1
+#                                                md_bg_color: 0.85, 0.85, 0.85, 1
+#
+#                                                on_release: app.vivod()
+#                                                size_hint: 1, .50
+#
+#                        Tab:
+#                            title: "Продукты"
+#                            id: "pro"
+#                            icon: "location-enter"
+#                            BoxLayout:
+#                                orientation: "vertical"
+#                                BoxLayout:
+#                                    orientation: "horizontal"
+#
+#                                    ScrollView:
+#                                        scroll_timeout : 100
+#
+#                                        MDList:
+#                                            id: md_list
+#                                            padding: 0
+#
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                id: screenID
+#                                                FitImage:
+#                                                    id: scc
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/мясо.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#                                                        id: vivod
+#                                                        text: "Мясооо"
+#                                                        secondary_text: "0кг"
+#                                                        tertiary_text: "0.3 кг на чел"
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/овощи.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#                                                        id: kar
+#                                                        text: "Картошка"
+#                                                        secondary_text: "0кг"
+#                                                        tertiary_text: "0.2 кг на чел"
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/макароны.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#                                                        id: mac
+#                                                        text: "Макароны"
+#                                                        secondary_text: "0кг"
+#                                                        tertiary_text: "0.07 кг на чел"
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/овощи.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#                                                        id: pomi
+#                                                        text: "Помидоры"
+#                                                        secondary_text: "0кг"
+#                                                        tertiary_text: "0.1 кг на чел"
+#
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/овощи.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#                                                        id: ogyr
+#                                                        text: "Огурцы"
+#                                                        secondary_text: "0кг"
+#                                                        tertiary_text: "0.055 грм на чел"
+#
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/зелень.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#                                                        id: zel
+#                                                        text: "Зелень"
+#                                                        secondary_text: "1 пучок"
+#
+#
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/овощи.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#                                                        id: luc
+#                                                        text: "Лук"
+#                                                        secondary_text: "0кг"
+#                                                        tertiary_text: "0.5 кг на чел"
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/соусы.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#                                                        id: sos
+#                                                        text: "Соусы"
+#                                                        secondary_text: "0кг"
+#                                                        tertiary_text: "140 рублей"
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/мучные.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#                                                        id: myc
+#                                                        text: "Мучное"
+#                                                        secondary_text: "0кг"
+#                                                        tertiary_text: "0-"
+#
+#
+#                                    MDIconButton:
+#                                        icon: "plus-circle"
+#                                        on_press:
+# #                                           root.nav_drawer.set_state("close")
+#                                            root.screen_manager.current = "scr 2"
+#                        Tab:
+#                            title: "Инструменты"
+#                            icon: "toolbox"
+#                            BoxLayout:
+#                                orientation: "vertical"
+#                                BoxLayout:
+#                                    orientation: "horizontal"
+#
+#                                    ScrollView:
+#                                        scroll_timeout : 100
+#
+#                                        MDList:
+#                                            id: md_lis
+#                                            padding: 0
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                id: screenID
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/478319_original.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#
+#                                                        text: "Лопата"
+#                                                        tertiary_text: "1 шт"
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/dlya-ohoty-2.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#
+#                                                        text: "Мангал"
+#
+#                                                        tertiary_text: "1 шт"
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/dlya-ohoty-2.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#
+#                                                        text: "Палатка"
+#
+#                                                        tertiary_text: "0 шт"
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/dlya-ohoty-2.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#
+#                                                        text: "Удочка"
+#
+#                                                        tertiary_text: "1 шт"
+#
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/33156.750x0.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#
+#                                                        text: "Бензогенератор"
+#
+#                                                        tertiary_text: "1 шт"
+#
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/Spichki-i-zazhigalka.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#
+#                                                        text: "Спички/Зажигалка"
+#                                                        secondary_text: "1 шт"
+#
+#
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/25eb802ec2d4b1aaefaa53555745aaa9-fit-400x400.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#
+#                                                        text: "Туалетная бумаги"
+#
+#                                                        tertiary_text: "1 шт"
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/dlya-ohoty-2.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#
+#                                                        text: "Сумка холодилник"
+#
+#                                                        tertiary_text: "1 шт"
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/item_262234.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#
+#                                                        text: "Полотенце"
+#
+#                                                        tertiary_text: "1 шт"
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/25eb802ec2d4b1aaefaa53555745aaa9-fit-400x400.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#
+#                                                        text: "Мыло"
+#
+#                                                        tertiary_text: "1 шт"
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/25eb802ec2d4b1aaefaa53555745aaa9-fit-400x400.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#
+#                                                        text: "Зубная щетка и паста"
+#
+#                                                        tertiary_text: "1 шт"
+#                                            BoxLayout:
+#                                                orientation: "horizontal"
+#                                                FitImage:
+#                                                    source: "/PicnicGo_версия 1.3/Иконки/100025720616b0.jpg"
+#                                                    size_hint: 0.25, .85
+#                                                MDList:
+#                                                    ThreeLineListItem:
+#
+#                                                        text: "Спальный мешок"
+#
+#                                                        tertiary_text: "1 шт"
+#                                    MDIconButton:
+#                                        icon: "plus-circle"
+#                                        on_press:
+# #                                           root.nav_drawer.set_state("close")
+#                                            root.screen_manager.current = "scr 2"
+#
+#
+#            MDScreen:
+#                name: "scr 2"
+#                BoxLayout:
+#                    orientation: 'vertical'
+#
+#                    MDTopAppBar:
+#                        title: "Picnic"
+#                        elevation: 10
+#                        left_action_items: [["exit-to-app", lambda x: app.cuala()]]
+#                        md_bg_color: 0, 0, 0, 1
+#
+#                    BoxLayout:
+#                        orientation: "vertical"
+#                        padding: "10dp"
+#                        BoxLayout:
+#                            orientation:"horizontal"
+#                            MDTextField:
+#                                id: hy
+#                                hint_text: "Наиминование"
+#                                mode: "fill"
+#                                md_bg_color: 0, 0, 0, 1
+#                        BoxLayout:
+#                            orientation:"horizontal"
+#                            MDTextField:
+#                                id: ger
+#                                hint_text: "Единица измерения"
+#                                mode: "fill"
+#                                md_bg_color: 0, 0, 0, 1
+#                        BoxLayout:
+#                            orientation:"horizontal"
+#                            MDTextField:
+#                                id: fer
+#                                hint_text: "Норма на человека"
+#                                mode: "fill"
+#                                md_bg_color: 0, 0, 0, 1
+#                        BoxLayout:
+#                            orientation:"horizontal"
+#                            MDTextField:
+#                                hint_text: "Выбрать иконку"
+#                                mode: "fill"
+#                                md_bg_color: 0, 0, 0, 1
+#                                max_text_length: 1
+#                            MDRaisedButton:
+#                                id: a
+#                                size_hint: .35, .77
+#                                text: "Выбрать"
+#                                theme_text_color: "Custom"
+#                                text_color: 0, 0, 0, 1
+#                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                on_release: app.file_manager_open()
+#                        BoxLayout:
+#                            orientation:"horizontal"
+#                            MDTextField:
+#                                hint_text: "Куда добавлять"
+#                                mode: "fill"
+#                                md_bg_color: 0, 0, 0, 1
+#                                max_text_length: 1
+#                            MDRaisedButton:
+#                                id: a
+#                                size_hint: .35, .77
+#                                text: "Выбрать"
+#                                theme_text_color: "Custom"
+#                                text_color: 0, 0, 0, 1
+#                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                on_release: app.show_alerh_dialog()
+#                        FloatLayout:
+#                            MDFloatingActionButton:
+#                                icon: "content-save-move"
+#                                pos: 720, 20
+#                                md_bg_color: 0, 0, 0, 1
+#                                on_release:
+#                                    app.createButton()
+#                                    root.screen_manager.current = "scr 1"
+#            MDScreen:
+#                name: "scr 3"
+#                BoxLayout:
+#                    orientation: 'vertical'
+#
+#                    MDTopAppBar:
+#                        title: "Picnic"
+#                        elevation: 10
+#                        left_action_items: [["exit-to-app", lambda x: app.cuala()]]
+#                        md_bg_color: 0, 0, 0, 1
+#                    BoxLayout:
+#                        orientation: "vertical"
+#                        TextInput:
+#                            id:calc_input
+#                            text: "0"
+#                            halign: "left"
+#                            size_hint: 1 , 0.2
+#                        GridLayout:
+#                            spacing: 3
+#                            padding: 3
+#                            size_hint: 1 , 0.6
+#                            cols:4
+#                            MDRaisedButton:
+#                                text: "AC"
+#                                size_hint: 0.20 , 0.55
+#                                theme_text_color: "Custom"
+#                                text_color: 1, 1, 1, 1
+#                                md_bg_color: 0.6, 0.6, 0.6, 1
+#                                on_press: app.clear()
+#                            MDRaisedButton:
+#                                id: clear
+#                                text: "<--"
+#                                size_hint: 0.20 , 0.55
+#                                on_press: app.remove()
+#
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 1, 1, 1, 1
+#                                md_bg_color: 0.6, 0.6, 0.6, 1
+#                            MDRaisedButton:
+#                                text: "/"
+#                                size_hint: 0.20 , 0.55
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 1, 1, 1, 1
+#                                md_bg_color: 0.6, 0.6, 0.6, 1
+#                                on_press: app.divide()
+#                            MDRaisedButton:
+#                                text: "x"
+#                                size_hint: 0.20 , 0.55
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 1, 1, 1, 1
+#                                md_bg_color: 0.6, 0.6, 0.6, 1
+#                                on_press: app.multiply()
+#                            MDRaisedButton:
+#                                text: "7"
+#                                size_hint: 0.20 , 0.55
+#                                theme_text_color: "Custom"
+#                                text_color: 0.01, 0.01, 0.01, 1
+#                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                on_press: app.button_press(7)
+#                            MDRaisedButton:
+#                                text: "8"
+#                                size_hint: 0.20 , 0.55
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 0.01, 0.01, 0.01, 1
+#                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                on_press: app.button_press(8)
+#                            MDRaisedButton:
+#                                text: "9"
+#                                size_hint: 0.20 , 0.55
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 0.01, 0.01, 0.01, 1
+#                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                on_press: app.button_press(9)
+#                            MDRaisedButton:
+#                                text: "-"
+#                                size_hint: 0.20 , 0.55
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 1, 1, 1, 1
+#                                md_bg_color: 0.6, 0.6, 0.6, 1
+#                                on_press: app.subtract()
+#
+#                            MDRaisedButton:
+#                                text: "4"
+#                                size_hint: 0.20 , 0.55
+#                                theme_text_color: "Custom"
+#                                text_color: 0.01, 0.01, 0.01, 1
+#                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                on_press: app.button_press(4)
+#                            MDRaisedButton:
+#                                text: "5"
+#                                size_hint: 0.20 , 0.55
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 0.01, 0.01, 0.01, 1
+#                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                on_press: app.button_press(5)
+#                            MDRaisedButton:
+#                                text: "6"
+#                                size_hint: 0.20 , 0.55
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 0.01, 0.01, 0.01, 1
+#                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                on_press: app.button_press(6)
+#                            MDRaisedButton:
+#                                text: "+"
+#                                size_hint: 0.20 , 0.55
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 1, 1, 1, 1
+#                                md_bg_color: 0.6, 0.6, 0.6, 1
+#                                on_press: app.add()
+#
+#                            MDRaisedButton:
+#                                text: "1"
+#                                size_hint: 0.20 , 0.55
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 0.01, 0.01, 0.01, 1
+#                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                on_press: app.button_press(1)
+#                            MDRaisedButton:
+#                                text: "2"
+#                                size_hint: 0.20 , 0.55
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 0.01, 0.01, 0.01, 1
+#                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                on_press: app.button_press(2)
+#                            MDRaisedButton:
+#                                text: "3"
+#                                size_hint: 0.20 , 0.55
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 0.01, 0.01, 0.01, 1
+#                                md_bg_color: 0.85, 0.85, 0.85, 1
+#                                on_press: app.button_press(3)
+#                            MDRaisedButton:
+#                                id: inp0
+#                                halign: "right"
+#                                text: "0"
+#                                size_hint: 0.20 , 0.55
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 1, 1, 1, 1
+#                                md_bg_color: 0.6, 0.6, 0.6, 1
+#                                on_press: app.button_press(0)
+#                        BoxLayout
+#                            size_hint: 1 , 0.2
+#
+#                            orientation: "horizontal"
+#                            MDRaisedButton:
+#
+#                                text: "="
+#                                size_hint: 1 , 1
+#
+#                                theme_text_color: "Custom"
+#                                text_color: 1, 1, 1, 1
+#                                md_bg_color: 0.6, 0.6, 0.6, 1
+#                                on_press: app.equals()
+
+
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            ContentNavigationDrawer:
+                screen_manager: screen_manager
+                nav_drawer: nav_drawer
+
+
