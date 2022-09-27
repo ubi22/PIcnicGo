@@ -86,6 +86,7 @@ Screen:
                                 orientation: "vertical"
                                 TextInput:
                                     id:calc_input
+                                    font_size: dp(60)
                                     text: "0"
                                     halign: "left"
                                     size_hint: 1 , 0.2
@@ -97,6 +98,7 @@ Screen:
                                     MDRaisedButton:
                                         text: "AC"
                                         size_hint: 0.20 , 0.55
+                                        font_size: dp(20)
                                         theme_text_color: "Custom"
                                         text_color: 1, 1, 1, 1
                                         md_bg_color: 0.6, 0.6, 0.6, 1
@@ -106,7 +108,7 @@ Screen:
                                         text: "<--"
                                         size_hint: 0.20 , 0.55
                                         on_press: app.remove()
-
+                                        font_size: dp(20)
 
                                         theme_text_color: "Custom"
                                         text_color: 1, 1, 1, 1
@@ -114,7 +116,7 @@ Screen:
                                     MDRaisedButton:
                                         text: "/"
                                         size_hint: 0.20 , 0.55
-
+                                        font_size: dp(20)
                                         theme_text_color: "Custom"
                                         text_color: 1, 1, 1, 1
                                         md_bg_color: 0.6, 0.6, 0.6, 1
@@ -122,22 +124,23 @@ Screen:
                                     MDRaisedButton:
                                         text: "x"
                                         size_hint: 0.20 , 0.55
-
                                         theme_text_color: "Custom"
                                         text_color: 1, 1, 1, 1
+                                        font_size: dp(20)
                                         md_bg_color: 0.6, 0.6, 0.6, 1
                                         on_press: app.multiply()
                                     MDRaisedButton:
                                         text: "7"
                                         size_hint: 0.20 , 0.55
                                         theme_text_color: "Custom"
+                                        font_size: dp(20)
                                         text_color: 0.01, 0.01, 0.01, 1
                                         md_bg_color: 0.85, 0.85, 0.85, 1
                                         on_press: app.button_press(7)
                                     MDRaisedButton:
                                         text: "8"
                                         size_hint: 0.20 , 0.55
-
+                                        font_size: dp(20)
                                         theme_text_color: "Custom"
                                         text_color: 0.01, 0.01, 0.01, 1
                                         md_bg_color: 0.85, 0.85, 0.85, 1
@@ -145,7 +148,7 @@ Screen:
                                     MDRaisedButton:
                                         text: "9"
                                         size_hint: 0.20 , 0.55
-
+                                        font_size: dp(20)
                                         theme_text_color: "Custom"
                                         text_color: 0.01, 0.01, 0.01, 1
                                         md_bg_color: 0.85, 0.85, 0.85, 1
@@ -153,7 +156,7 @@ Screen:
                                     MDRaisedButton:
                                         text: "-"
                                         size_hint: 0.20 , 0.55
-
+                                        font_size: dp(20)
                                         theme_text_color: "Custom"
                                         text_color: 1, 1, 1, 1
                                         md_bg_color: 0.6, 0.6, 0.6, 1
@@ -162,6 +165,7 @@ Screen:
                                     MDRaisedButton:
                                         text: "4"
                                         size_hint: 0.20 , 0.55
+                                        font_size: dp(20)
                                         theme_text_color: "Custom"
                                         text_color: 0.01, 0.01, 0.01, 1
                                         md_bg_color: 0.85, 0.85, 0.85, 1
@@ -169,7 +173,7 @@ Screen:
                                     MDRaisedButton:
                                         text: "5"
                                         size_hint: 0.20 , 0.55
-
+                                        font_size: dp(20)
                                         theme_text_color: "Custom"
                                         text_color: 0.01, 0.01, 0.01, 1
                                         md_bg_color: 0.85, 0.85, 0.85, 1
@@ -177,7 +181,7 @@ Screen:
                                     MDRaisedButton:
                                         text: "6"
                                         size_hint: 0.20 , 0.55
-
+                                        font_size: dp(20)
                                         theme_text_color: "Custom"
                                         text_color: 0.01, 0.01, 0.01, 1
                                         md_bg_color: 0.85, 0.85, 0.85, 1
@@ -185,7 +189,7 @@ Screen:
                                     MDRaisedButton:
                                         text: "+"
                                         size_hint: 0.20 , 0.55
-
+                                        font_size: dp(20)
                                         theme_text_color: "Custom"
                                         text_color: 1, 1, 1, 1
                                         md_bg_color: 0.6, 0.6, 0.6, 1
@@ -194,7 +198,7 @@ Screen:
                                     MDRaisedButton:
                                         text: "1"
                                         size_hint: 0.20 , 0.55
-
+                                        font_size: dp(20)
                                         theme_text_color: "Custom"
                                         text_color: 0.01, 0.01, 0.01, 1
                                         md_bg_color: 0.85, 0.85, 0.85, 1
@@ -202,7 +206,7 @@ Screen:
                                     MDRaisedButton:
                                         text: "2"
                                         size_hint: 0.20 , 0.55
-
+                                        font_size: dp(20)
                                         theme_text_color: "Custom"
                                         text_color: 0.01, 0.01, 0.01, 1
                                         md_bg_color: 0.85, 0.85, 0.85, 1
@@ -210,30 +214,27 @@ Screen:
                                     MDRaisedButton:
                                         text: "3"
                                         size_hint: 0.20 , 0.55
-
+                                        font_size: dp(20)
                                         theme_text_color: "Custom"
                                         text_color: 0.01, 0.01, 0.01, 1
                                         md_bg_color: 0.85, 0.85, 0.85, 1
                                         on_press: app.button_press(3)
                                     MDRaisedButton:
                                         id: inp0
-                                        halign: "right"
                                         text: "0"
                                         size_hint: 0.20 , 0.55
-
+                                        font_size: dp(20)
                                         theme_text_color: "Custom"
                                         text_color: 1, 1, 1, 1
                                         md_bg_color: 0.6, 0.6, 0.6, 1
                                         on_press: app.button_press(0)
                                 BoxLayout
                                     size_hint: 1 , 0.2
-
                                     orientation: "horizontal"
                                     MDRaisedButton:
-
+                                        font_size: dp(20)
                                         text: "="
                                         size_hint: 1 , 1
-
                                         theme_text_color: "Custom"
                                         text_color: 1, 1, 1, 1
                                         md_bg_color: 0.6, 0.6, 0.6, 1
@@ -243,9 +244,6 @@ Screen:
                         name: 'screen 2'
                         text: 'Главная'
                         icon: 'home'
-
-
-
 
                         BoxLayout:
                             orientation: 'vertical'
