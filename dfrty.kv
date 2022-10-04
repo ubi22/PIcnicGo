@@ -67,11 +67,12 @@ Screen:
         ScreenManager:
             id: screen_manager
             MDScreen:
-                screen_manager: screen_manager
-                nav_drawer: nav_drawer
+                name: "scr 1"
 
                 MDBottomNavigation:
-                    panel_color: 1, 1, 1, 0
+                    #panel_color: "#eeeaea"
+                    selected_color_background: "orange"
+                    text_color_active: "lightgrey"
 
 
                     MDBottomNavigationItem:
@@ -81,6 +82,7 @@ Screen:
 
                         BoxLayout:
                             orientation: 'vertical'
+
 
                             BoxLayout:
                                 orientation: "vertical"
@@ -249,7 +251,7 @@ Screen:
                             orientation: 'vertical'
 
                             MDTopAppBar:
-                                title: "Picnic"
+                                title: "PicnicGO"
                                 elevation: 10
                                 left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
                                 md_bg_color: 0, 0, 0, 1
@@ -370,7 +372,214 @@ Screen:
                         text: 'Продукты'
                         source: "/PicniGo_1.4/Иконки/45200.png"
 
-                        MDLabel
+                        BoxLayout:
+                            orientation: "vertical"
+                            MDTopAppBar:
+                                title: "PicnicGO"
+                                elevation: 10
+                                left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+                                md_bg_color: 0, 0, 0, 1
+                            BoxLayout:
+                                orientation: "horizontal"
+
+
+                                ScrollView:
+                                    scroll_timeout : 100
+
+                                    MDList:
+                                        id: md_list
+                                        padding: 0
+
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            id: screenID
+                                            FitImage:
+                                                id: scc
+                                                source: "/PicnicGo_версия 1.3/Иконки/мясо.jpg"
+                                                size_hint: 0.25, .85
+                                            MDList:
+                                                ThreeLineListItem:
+                                                    id: vivod
+                                                    text: "Мясооо"
+                                                    secondary_text: "0кг"
+                                                    tertiary_text: "0.3 кг на чел"
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            FitImage:
+                                                source: "/PicnicGo_версия 1.3/Иконки/овощи.jpg"
+                                                size_hint: 0.25, .85
+                                            MDList:
+                                                ThreeLineListItem:
+                                                    id: kar
+                                                    text: "Картошка"
+                                                    secondary_text: "0кг"
+                                                    tertiary_text: "0.2 кг на чел"
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            FitImage:
+                                                source: "/PicnicGo_версия 1.3/Иконки/макароны.jpg"
+                                                size_hint: 0.25, .85
+                                            MDList:
+                                                ThreeLineListItem:
+                                                    id: mac
+                                                    text: "Макароны"
+                                                    secondary_text: "0кг"
+                                                    tertiary_text: "0.07 кг на чел"
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            FitImage:
+                                                source: "/PicnicGo_версия 1.3/Иконки/овощи.jpg"
+                                                size_hint: 0.25, .85
+                                            MDList:
+                                                ThreeLineListItem:
+                                                    id: pomi
+                                                    text: "Помидоры"
+                                                    secondary_text: "0кг"
+                                                    tertiary_text: "0.1 кг на чел"
+
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            FitImage:
+                                                source: "/PicnicGo_версия 1.3/Иконки/овощи.jpg"
+                                                size_hint: 0.25, .85
+                                            MDList:
+                                                ThreeLineListItem:
+                                                    id: ogyr
+                                                    text: "Огурцы"
+                                                    secondary_text: "0кг"
+                                                    tertiary_text: "0.055 грм на чел"
+
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            FitImage:
+                                                source: "/PicnicGo_версия 1.3/Иконки/зелень.jpg"
+                                                size_hint: 0.25, .85
+                                            MDList:
+                                                ThreeLineListItem:
+                                                    id: zel
+                                                    text: "Зелень"
+                                                    secondary_text: "1 пучок"
+
+
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            FitImage:
+                                                source: "/PicnicGo_версия 1.3/Иконки/овощи.jpg"
+                                                size_hint: 0.25, .85
+                                            MDList:
+                                                ThreeLineListItem:
+                                                    id: luc
+                                                    text: "Лук"
+                                                    secondary_text: "0кг"
+                                                    tertiary_text: "0.5 кг на чел"
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            FitImage:
+                                                source: "/PicnicGo_версия 1.3/Иконки/соусы.jpg"
+                                                size_hint: 0.25, .85
+                                            MDList:
+                                                ThreeLineListItem:
+                                                    id: sos
+                                                    text: "Соусы"
+                                                    secondary_text: "0кг"
+                                                    tertiary_text: "140 рублей"
+                                        BoxLayout:
+                                            orientation: "horizontal"
+                                            FitImage:
+                                                source: "/PicnicGo_версия 1.3/Иконки/мучные.jpg"
+                                                size_hint: 0.25, .85
+                                            MDList:
+                                                ThreeLineListItem:
+                                                    id: myc
+                                                    text: "Мучное"
+                                                    secondary_text: "0кг"
+                                                    tertiary_text: "0-"
+
+
+                                        FloatLayout:
+                                            MDFloatingActionButton:
+                                                icon: "content-save-move"
+                                                pos: 400, 20
+                                                md_bg_color: 0, 0, 0, 1
+                                                on_press:
+            #                                           root.nav_drawer.set_state("close")
+                                                    root.screen_manager.current = "scr 2"
+            MDScreen:
+                name: "scr 2"
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    MDTopAppBar:
+                        title: "Picnic"
+                        elevation: 10
+                        left_action_items: [["exit-to-app", lambda x: app.cuala()]]
+                        md_bg_color: 0, 0, 0, 1
+
+                    BoxLayout:
+                        orientation: "vertical"
+                        padding: "10dp"
+                        BoxLayout:
+                            orientation:"horizontal"
+                            MDTextField:
+                                id: hy
+                                hint_text: "Наиминование"
+                                mode: "fill"
+                                md_bg_color: 0, 0, 0, 1
+                        BoxLayout:
+                            orientation:"horizontal"
+                            MDTextField:
+                                id: ger
+                                hint_text: "Единица измерения"
+                                mode: "fill"
+                                md_bg_color: 0, 0, 0, 1
+                        BoxLayout:
+                            orientation:"horizontal"
+                            MDTextField:
+                                id: fer
+                                hint_text: "Норма на человека"
+                                mode: "fill"
+                                md_bg_color: 0, 0, 0, 1
+                        BoxLayout:
+                            orientation:"horizontal"
+                            MDTextField:
+                                hint_text: "Выбрать иконку"
+                                mode: "fill"
+                                md_bg_color: 0, 0, 0, 1
+                                max_text_length: 1
+                            MDRaisedButton:
+                                id: a
+                                size_hint: .35, .77
+                                text: "Выбрать"
+                                theme_text_color: "Custom"
+                                text_color: 0, 0, 0, 1
+                                md_bg_color: 0.85, 0.85, 0.85, 1
+                                on_release: app.file_manager_open()
+                        BoxLayout:
+                            orientation:"horizontal"
+                            MDTextField:
+                                hint_text: "Куда добавлять"
+                                mode: "fill"
+                                md_bg_color: 0, 0, 0, 1
+                                max_text_length: 1
+                            MDRaisedButton:
+                                id: a
+                                size_hint: .35, .77
+                                text: "Выбрать"
+                                theme_text_color: "Custom"
+                                text_color: 0, 0, 0, 1
+                                md_bg_color: 0.85, 0.85, 0.85, 1
+                                on_release: app.show_alerh_dialog()
+                        FloatLayout:
+                            MDFloatingActionButton:
+                                icon: "content-save-move"
+                                pos: 400, 20
+                                md_bg_color: 0, 0, 0, 1
+                                on_release:
+                                    app.createButton()
+                                    root.screen_manager.current = "scr 1"
+
+
+
 
 #Screen:
 #    screen_manager: screen_manager
