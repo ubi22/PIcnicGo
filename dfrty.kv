@@ -23,17 +23,13 @@
     AnchorLayout:
         anchor_x: "left"
         size_hint_y: None
-        height: avatar.height
 
-        Image:
-            id: avatar
-            size_hint: None, None
-            size: "56dp", "56dp"
-            source: "/PicnicGo_версия 1.3/Иконки/главный.jpg"
+
+
         MDNavigationDrawerHeader:
-            title: "Header title"
+            title: "PicnicGo"
             title_color: "#4a4939"
-            text: "Header text"
+            text: "мы всегда с вами"
 
 
 
@@ -312,7 +308,7 @@ Screen:
                                             orientation: "horizontal"
                                             padding: "10dp"
                                             FitImage:
-                                                source: "/PicnicGo_версия 1.3/Иконки/восход.jpg"
+                                                source: "/PicnicGo_версия 1.4/Иконки/восход.jpg"
                                                 size_hint: 0.25, .85
                                             MDTextField:
                                                 id: ftt
@@ -395,7 +391,7 @@ Screen:
                                             id: screenID
                                             FitImage:
                                                 id: scc
-                                                source: "/PicnicGo_версия 1.3/Иконки/мясо.jpg"
+                                                source: "/PicnicGo_версия 1.4/Иконки/мясо.jpg"
                                                 size_hint: 0.25, .85
                                             MDList:
                                                 ThreeLineListItem:
@@ -406,7 +402,7 @@ Screen:
                                         BoxLayout:
                                             orientation: "horizontal"
                                             FitImage:
-                                                source: "/PicnicGo_версия 1.3/Иконки/овощи.jpg"
+                                                source: "/PicnicGo_версия 1.4/Иконки/овощи.jpg"
                                                 size_hint: 0.25, .85
                                             MDList:
                                                 ThreeLineListItem:
@@ -417,7 +413,7 @@ Screen:
                                         BoxLayout:
                                             orientation: "horizontal"
                                             FitImage:
-                                                source: "/PicnicGo_версия 1.3/Иконки/макароны.jpg"
+                                                source: "/PicnicGo_версия 1.4/Иконки/макароны.jpg"
                                                 size_hint: 0.25, .85
                                             MDList:
                                                 ThreeLineListItem:
@@ -428,7 +424,7 @@ Screen:
                                         BoxLayout:
                                             orientation: "horizontal"
                                             FitImage:
-                                                source: "/PicnicGo_версия 1.3/Иконки/овощи.jpg"
+                                                source: "/PicnicGo_версия 1.4/Иконки/овощи.jpg"
                                                 size_hint: 0.25, .85
                                             MDList:
                                                 ThreeLineListItem:
@@ -440,7 +436,7 @@ Screen:
                                         BoxLayout:
                                             orientation: "horizontal"
                                             FitImage:
-                                                source: "/PicnicGo_версия 1.3/Иконки/овощи.jpg"
+                                                source: "/PicnicGo_версия 1.4/Иконки/овощи.jpg"
                                                 size_hint: 0.25, .85
                                             MDList:
                                                 ThreeLineListItem:
@@ -452,7 +448,7 @@ Screen:
                                         BoxLayout:
                                             orientation: "horizontal"
                                             FitImage:
-                                                source: "/PicnicGo_версия 1.3/Иконки/зелень.jpg"
+                                                source: "/PicnicGo_версия 1.4/Иконки/зелень.jpg"
                                                 size_hint: 0.25, .85
                                             MDList:
                                                 ThreeLineListItem:
@@ -464,7 +460,7 @@ Screen:
                                         BoxLayout:
                                             orientation: "horizontal"
                                             FitImage:
-                                                source: "/PicnicGo_версия 1.3/Иконки/овощи.jpg"
+                                                source: "/PicnicGo_версия 1.4/Иконки/овощи.jpg"
                                                 size_hint: 0.25, .85
                                             MDList:
                                                 ThreeLineListItem:
@@ -475,7 +471,7 @@ Screen:
                                         BoxLayout:
                                             orientation: "horizontal"
                                             FitImage:
-                                                source: "/PicnicGo_версия 1.3/Иконки/соусы.jpg"
+                                                source: "/PicnicGo_версия 1.4/Иконки/соусы.jpg"
                                                 size_hint: 0.25, .85
                                             MDList:
                                                 ThreeLineListItem:
@@ -486,7 +482,7 @@ Screen:
                                         BoxLayout:
                                             orientation: "horizontal"
                                             FitImage:
-                                                source: "/PicnicGo_версия 1.3/Иконки/мучные.jpg"
+                                                source: "/PicnicGo_версия 1.4/Иконки/мучные.jpg"
                                                 size_hint: 0.25, .85
                                             MDList:
                                                 ThreeLineListItem:
@@ -496,13 +492,10 @@ Screen:
                                                     tertiary_text: "0-"
 
 
-                                        FloatLayout:
-                                            MDFloatingActionButton:
-                                                icon: "content-save-move"
-                                                pos: 400, 20
-                                                md_bg_color: 0, 0, 0, 1
+                                            MDIconButton:
+                                                icon: "plus-circle"
                                                 on_press:
-            #                                           root.nav_drawer.set_state("close")
+         #                                           root.nav_drawer.set_state("close")
                                                     root.screen_manager.current = "scr 2"
             MDScreen:
                 name: "scr 2"
@@ -510,7 +503,7 @@ Screen:
                     orientation: 'vertical'
 
                     MDTopAppBar:
-                        title: "Picnic"
+                        title: "PicnicGo"
                         elevation: 10
                         left_action_items: [["exit-to-app", lambda x: app.cuala()]]
                         md_bg_color: 0, 0, 0, 1
@@ -518,6 +511,7 @@ Screen:
                     BoxLayout:
                         orientation: "vertical"
                         padding: "10dp"
+                        size_hint: .75, 1
                         BoxLayout:
                             orientation:"horizontal"
                             MDTextField:
@@ -554,21 +548,7 @@ Screen:
                                 text_color: 0, 0, 0, 1
                                 md_bg_color: 0.85, 0.85, 0.85, 1
                                 on_release: app.file_manager_open()
-                        BoxLayout:
-                            orientation:"horizontal"
-                            MDTextField:
-                                hint_text: "Куда добавлять"
-                                mode: "fill"
-                                md_bg_color: 0, 0, 0, 1
-                                max_text_length: 1
-                            MDRaisedButton:
-                                id: a
-                                size_hint: .35, .77
-                                text: "Выбрать"
-                                theme_text_color: "Custom"
-                                text_color: 0, 0, 0, 1
-                                md_bg_color: 0.85, 0.85, 0.85, 1
-                                on_release: app.show_alerh_dialog()
+
                         FloatLayout:
                             MDFloatingActionButton:
                                 icon: "content-save-move"
@@ -577,6 +557,9 @@ Screen:
                                 on_release:
                                     app.createButton()
                                     root.screen_manager.current = "scr 1"
+                    BoxLayout:
+                        orientation:'horizontal'
+                        size_hint: .25, 1
 
 
 

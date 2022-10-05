@@ -1,3 +1,4 @@
+
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import StringProperty, ListProperty
@@ -224,15 +225,7 @@ class PicnicGo(MDApp):
         self.sezon = 4
         toast("В какой сезон? Зима")
         self.root.ids.u.text = "Зима"
-    def dialoyf(self, *args):
-        self.dialogk.dismiss(force=True)
-        self.root.ids.vega.text = "Продукты"
-        self.fyx = 0
 
-    def dialonf(self, *args):
-        self.dialogk.dismiss(force=True)
-        self.root.ids.vega.text = "Инструменты"
-        self.fyx = 1
 
 
     def dialoy(self, *args):
@@ -291,7 +284,7 @@ class PicnicGo(MDApp):
 
 
     def file_manager_open(self):
-        self.file_manager.show('/PicnicGo_1.4/Иконки/')  # output manager to the screen
+        self.file_manager.show('/PicnicGo_версия 1.4/Иконки/')  # output manager to the screen
         self.manager_open = True
 
     def select_path(self, path):
@@ -461,7 +454,7 @@ class PicnicGo(MDApp):
         date_dialog = MDDatePicker()
         date_dialog.bind(on_save=self.on_save, on_cancel=self.on_cancel)
         date_dialog.open()
-    icon = "/PicnicGo_версия 1.3/Иконки/главный.png"
+    icon = "/PicnicGo_версия 1.4/Иконки/главный.png"
     content = sDrawer()
 
     # def __init__(self, **kwargs):
@@ -493,15 +486,10 @@ class PicnicGo(MDApp):
         f = self.root.ids.hy.text
         d = self.root.ids.ger.text
         if self.fyx == 0:
-            self.root.ids.tabs.switch_tab(self.root.ids.tabs.get_tab_list()[1])
             conten.add_widget(FitImage(source=self.pomi,size_hint={0.25, 0.85}))
             conten.add_widget(ThreeLineListItem(text=f'{f}',secondary_text=f"{a} {d}"))
             self.root.ids.md_list.add_widget(conten)
-        else:
-            self.root.ids.tabs.switch_tab(self.root.ids.tabs.get_tab_list()[2])
-            conten.add_widget(FitImage(source=self.pomi, size_hint={0.25, 0.85}))
-            conten.add_widget(ThreeLineListItem(text=f'{f}', secondary_text=f"{a} {d}"))
-            self.root.ids.md_lis.add_widget(conten)
+
 
     def on_fg(instance):
         webbrowser.open("https://vk.com/zv_k_team")
