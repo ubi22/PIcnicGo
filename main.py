@@ -132,7 +132,7 @@ class PicnicGo(MDApp):
                 elif f == "0":
                     print("0")
                 else:
-                    self.root.ids.tabs.switch_tab(self.root.ids.tabs.get_tab_list()[1])
+
                     f = float(self.root.ids.ftt.text)
                     a = float(self.root.ids.coli.text)
                     miso = .300 * a * f
@@ -164,9 +164,10 @@ class PicnicGo(MDApp):
                 elif f == "0":
                     print("0")
                 else:
-                    self.root.ids.tabs.switch_tab(self.root.ids.tabs.get_tab_list()[1])
+
+
                     self.root.ids.vivod.secondary_text = ""
-                    self.root.ids.scc.source = "/PicnicGo_версия 1.3/Иконки/главный.jpg"
+                    self.root.ids.scc.source = "/PicnicGo_версия 1.4/Иконки/главный.jpg"
                     self.root.ids.vivod.tertiary_text = ""
                     self.root.ids.vivod.text = ""
                     f = float(self.root.ids.ftt.text)
@@ -468,6 +469,7 @@ class PicnicGo(MDApp):
     #         position="auto",
     #         width_mult=4,
     #     )
+
     #     self.menu.bind(on_release=self.set_item)
     #
     # def set_item(self, instance_menu, instance_menu_item):
